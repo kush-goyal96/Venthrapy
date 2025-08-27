@@ -1,0 +1,12 @@
+@import url("https://fonts.cdnfonts.com/css/satoshi");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #527fc3;
+  --color-background: #f7f6f4;
+  --font-satoshi: "Satoshi", sans-serif;
+  --font-instrument: "Instrument Serif", serif;
+  --font-inter-tight: "Inter Tight", sans-serif;
+}

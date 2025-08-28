@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "../components/Banner";
 import About from "../components/About";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (

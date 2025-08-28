@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Home from './pages/Home'
-import Navbar from './components/Navbar'
+import Home from "./pages/Home.jsx";
+import Team from "./pages/Team.jsx";
+import Blogs from "./pages/Blogs.jsx";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-
   return (
-    <div className="">
-      <Home/>
-    </div>
-  )
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/team" element={<Team/>} />
+      <Route path="/blogs" element={<Blogs/>} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

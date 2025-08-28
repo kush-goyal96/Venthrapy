@@ -11,6 +11,7 @@ const posts = Array.from({ length: 6 }).map((_, i) => ({
   date: "Aug 16, 2025",
   readTime: "12min read",
   image: reactLogo,
+  link: "#",
   id: i,
 }));
 

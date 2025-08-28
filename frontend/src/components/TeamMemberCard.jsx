@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 
 const TeamMemberCard = ({ name, role, image }) => {
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 shadow-sm w-[250px] h-[300px] flex flex-col">
+    <div className="bg-white rounded-2xl border border-gray-200 shadow-sm w-[250px] h-[310px] flex flex-col transition-transform duration-200 hover:-translate-y-1 hover:shadow-md">
       <div className="px-4 pt-4 pb-2">
         <div className="block overflow-hidden">
           <img
             src={image}
             alt={`${name} portrait`}
-            className="w-full aspect-square bg-blue-500/70 rounded-xl"
+            className="w-full aspect-square bg-blue-500/70 rounded-xl transition-transform duration-200 hover:scale-[1.02]"
           />
         </div>
       </div>

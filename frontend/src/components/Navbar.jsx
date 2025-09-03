@@ -1,12 +1,12 @@
 import React from "react";
-import logo from "../assets/logo.svg";
+import logo from "../assets/images/logo.svg";
 import { useNavigate, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="w-full px-6 py-4 border-gray-100 mt-5">
+    <nav className="w-full px-6 py-4 border-gray-100 mt-5 z-20">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
@@ -21,7 +21,7 @@ const Navbar = () => {
         </div>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex items-center space-x-8 font-satoshi bg-background px-8 py-2 rounded-3xl text-primary font-medium text-lg border-transparent shadow-[inset_0_0.5px_1px_rgba(0,0,0,0.10)]">
+        <div className="hidden md:flex items-center space-x-8 font-satoshi bg-background px-8 py-2 rounded-3xl text-primary font-medium text-lg border-transparent shadow-[inset_0_0.5px_1px_rgba(0,0,0,0.10)] opacity-95">
           <NavLink
             to="/about"
             className={({ isActive }) =>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import lock from "../assets/lock.svg";
-import unlock from "../assets/unlock.svg";
+import lock from "../assets/images/lock.svg";
+import unlock from "../assets/images/unlock.svg";
 
 export default function LockToggle() {
   const [locked, setLocked] = useState(true);

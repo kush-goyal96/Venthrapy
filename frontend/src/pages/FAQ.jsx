@@ -28,6 +28,7 @@ const FAQ = () => {
             sections={sections}
             onSectionChange={setCurrentTitle}
             scrollRoot={scrollRoot}
+            anchorRatio={0.70}
           />
         </div>
       </div>

@@ -6,7 +6,12 @@ import {
 } from "@material-tailwind/react";
 import { ChevronDown } from "lucide-react";
 
-export function FAQs({ sections, onSectionChange, scrollRoot }) {
+export function FAQs({
+  sections,
+  onSectionChange,
+  scrollRoot,
+  anchorRatio = 0.25,
+}) {
   const [open, setOpen] = React.useState("0-0");
   const handleOpen = (key) => setOpen((prev) => (prev === key ? "" : key));
 
@@ -20,7 +25,8 @@ export function FAQs({ sections, onSectionChange, scrollRoot }) {
       const el = scrollRoot?.current;
       const containerTop = el ? el.getBoundingClientRect().top : 0;
       const containerHeight = el ? el.clientHeight : window.innerHeight;
-      const anchor = containerTop + containerHeight * 0.25; // use 25% from top as anchor
+      const ratio = Math.min(Math.max(anchorRatio, 0), 1);
+      const anchor = containerTop + containerHeight * ratio; // configurable anchor point
 
       let bestIdx = 0;
 
@@ -52,7 +58,7 @@ export function FAQs({ sections, onSectionChange, scrollRoot }) {
       container.removeEventListener("scroll", computeActive);
       window.removeEventListener("resize", computeActive);
     };
-  }, [sections, onSectionChange, scrollRoot]);
+  }, [sections, onSectionChange, scrollRoot, anchorRatio]);
 
   return (
     <div className="mx-10">

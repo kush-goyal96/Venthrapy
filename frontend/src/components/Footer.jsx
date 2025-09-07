@@ -6,7 +6,7 @@ import footer_img from "../assets/images/footer_img.svg";
 const Footer = () => {
   const navigate = useNavigate();
   return (
-    <div className="realtive h-screen overflow-hidden">
+    <div className="realtive overflow-hidden">
       {/* first part */}
       <div className="flex bg-primary items-center overflow-hidden ">
         <div className="w-1/2 pr-6 pl-12 md:pl-24">

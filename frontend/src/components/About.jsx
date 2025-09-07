@@ -20,8 +20,11 @@ const About = () => {
           actions we take, the stories we hear, and the spaces we belong to.
         </p>
       </div>
-      <button className="rounded-4xl px-6 py-2 font-semibold tracking-tight hover:shadow-2xl cursor-pointer bg-primary text-background border-3 border-transparent mt-10">
+      <button className="relative group rounded-4xl px-6 py-2 font-semibold tracking-tight hover:shadow-2xl cursor-pointer bg-primary text-background border-3 border-transparent mt-10">
         Know more
+        <span className="absolute left-full ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          →
+        </span>
       </button>
     </section>
   );

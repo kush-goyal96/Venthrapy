@@ -2,11 +2,15 @@ import React from "react";
 import logo from "../assets/images/logo.svg";
 import { useNavigate, NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ isFixed = false }) => {
   const navigate = useNavigate();
 
   return (
-    <nav className="w-full px-6 py-4 border-gray-100 mt-5 z-20">
+    <nav
+      className={`w-full px-6 py-4 border-gray-100 z-20 ${
+        isFixed ? "fixed top-0 left-0 right-0 bg-transparent mt-2" : "mt-5"
+      }`}
+    >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
@@ -59,7 +63,7 @@ const Navbar = () => {
             Resources
           </NavLink>
           <NavLink
-            to="/tapes"
+            to="/meditation"
             className={({ isActive }) =>
               `hover:text-primary transition-colors duration-200 tracking-tight relative ${
                 isActive
@@ -68,7 +72,7 @@ const Navbar = () => {
               }`
             }
           >
-            Tapes
+            Meditation Library
           </NavLink>
           <NavLink
             to="/contact"
@@ -151,7 +155,7 @@ const Navbar = () => {
             blogs
           </NavLink>
           <NavLink
-            to="/tapes"
+            to="/meditation"
             className={({ isActive }) =>
               `hover:text-primary transition-colors duration-200 tracking-tight relative ${
                 isActive
@@ -160,7 +164,7 @@ const Navbar = () => {
               }`
             }
           >
-            tapes
+            Meditation Library
           </NavLink>
           <NavLink
             to="/contact"

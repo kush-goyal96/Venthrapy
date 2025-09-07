@@ -1,7 +1,7 @@
 import React from "react";
 import FAQs from "../components/FAQs";
 import Navbar from "../components/Navbar";
-import {sections} from '../assets/faqs'
+import {sections} from '../assets/assets'
 
 
 const FAQ = () => {

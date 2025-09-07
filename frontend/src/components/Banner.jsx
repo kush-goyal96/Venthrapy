@@ -1,13 +1,11 @@
 import React from "react";
-import Navbar from "./Navbar";
 import LockToggle from "./LockToggle";
 
 const Banner = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-transparent pt-24 md:pt-28">
       {/* Hero content */}
-      <div className="z-10 flex flex-col min-h-screen">
-        <Navbar />
+      <div className="z-10 flex flex-col flex-1">
         <div className="flex-[0.6]"></div>
 
         <div className="w-fit mx-auto">

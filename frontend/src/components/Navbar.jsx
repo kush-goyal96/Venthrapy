@@ -25,7 +25,7 @@ const Navbar = ({ isFixed = false }) => {
         </div>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex items-center space-x-8 font-satoshi bg-background px-8 py-2 rounded-3xl text-primary font-medium text-lg border-transparent shadow-[inset_0_0.5px_1px_rgba(0,0,0,0.10)] opacity-95">
+        <div className="hidden md:flex items-center space-x-8 font-satoshi bg-background px-8 py-2 rounded-3xl text-primary font-medium text-lg border-transparent shadow-[inset_0_1.5px_1px_rgba(0,0,0,0.20)] opacity-95">
           <NavLink
             to="/about"
             className={({ isActive }) =>

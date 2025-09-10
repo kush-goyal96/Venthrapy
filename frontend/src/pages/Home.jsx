@@ -4,6 +4,7 @@ import About from "../components/About";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ServicesHome from "../components/ServicesHome";
+import WhyChooseUs from "./WhyChooseUs";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       />
       <Banner />
       <About />
+      <WhyChooseUs />
       <ServicesHome />
       <Footer />
     </div>

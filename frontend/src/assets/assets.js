@@ -225,3 +225,56 @@ export const meditations = [
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
   },
 ];
+
+// Mood tracking emotions
+export const veryUnpleasantEmotions = [
+  "Angry",
+  "Anxious",
+  "Scared",
+  "Overwhelmed",
+  "Ashamed",
+  "Disgusted",
+  "Embarrassed",
+  "Frustrated",
+  "Annoyed",
+  "Jealous",
+  "Stressed",
+  "Worried",
+  "Guilty",
+  "Surprised",
+  "Hopeless",
+  "Irritated",
+  "Lonely",
+  "Discouraged",
+  "Disappointed",
+  "Drained",
+  "Sad",
+];
+
+export const neutralEmotions = [
+  "Content",
+  "Calm",
+  "Peaceful",
+  "Indifferent",
+  "Drained",
+];
+
+export const veryPleasantEmotions = [
+  "Amazed",
+  "Excited",
+  "Surprised",
+  "Passionate",
+  "Happy",
+  "Joyful",
+  "Amused",
+  "Satisfied",
+  "Brave",
+  "Proud",
+  "Confident",
+  "Hopeful",
+  "Relieved",
+  "Grateful",
+  "Content",
+  "Calm",
+  "Peaceful",
+];

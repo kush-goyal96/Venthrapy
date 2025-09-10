@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import { Slider, Box, Typography, Paper } from "@mui/material";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 import { X } from "lucide-react";
 import logo from "../assets/images/favicon.svg";
+import MoodLines from "../components/MoodLines";
+import MoodVeryUnpleasant from "./MoodVeryUnpleasant";
+import MoodNeutral from "./MoodNeutral";
+import MoodVeryPleasant from "./MoodVeryPleasant";
 
 const MoodTracker = () => {
-  const [moodValue, setMoodValue] = useState(50); 
+  const navigate = useNavigate();
+  const [moodValue, setMoodValue] = useState(50);
+  const [currentPage, setCurrentPage] = useState("mood-selector"); // "mood-selector", "emotion-selector"
+  const [selectedMoodCategory, setSelectedMoodCategory] = useState(null);
 
   const handleMoodChange = (event, newValue) => {
     setMoodValue(newValue);
@@ -29,16 +37,13 @@ const MoodTracker = () => {
   const moodCategory = getMoodCategory(moodValue);
   const moodColor = getMoodColor(moodValue);
 
-  // Save mood data (you can extend this to save to localStorage or API)
+  // Save mood data and show emotion selector
   const saveMood = () => {
     const moodData = {
       value: moodValue,
       category: moodCategory,
       timestamp: new Date().toISOString(),
     };
-
-    // For now, just log to console. You can extend this to save to localStorage or API
-    console.log("Mood saved:", moodData);
 
     // Save to localStorage for persistence
     const existingMoods = JSON.parse(
@@ -47,28 +52,30 @@ const MoodTracker = () => {
     existingMoods.push(moodData);
     localStorage.setItem("moodHistory", JSON.stringify(existingMoods));
 
-    alert(`Mood saved: ${moodCategory}`);
+    // Set the mood category and switch to emotion selector
+    setSelectedMoodCategory(moodCategory);
+    setCurrentPage("emotion-selector");
   };
 
-  // Generate vertical lines with varying heights
-  const generateLines = () => {
-    const lines = [];
-    for (let i = 0; i < 40; i++) {
-      const height = Math.random() * 80 + 15; // Random height between 15-55px
-      lines.push(
-        <div
-          key={i}
-          className="w-0.5 md:w-1 rounded-full"
-          style={{
-            height: `${height}px`,
-            backgroundColor: moodColor,
-            opacity: 0.6 + Math.random() * 0.4, // Random opacity between 0.6-1
-          }}
-        />
-      );
-    }
-    return lines;
+  // Handle going back to mood selector
+  const handleBackToMoodSelector = () => {
+    setCurrentPage("mood-selector");
+    setSelectedMoodCategory(null);
   };
+
+  // Render the appropriate page based on current state
+  if (currentPage === "emotion-selector") {
+    switch (selectedMoodCategory) {
+      case "very unpleasant":
+        return <MoodVeryUnpleasant onBack={handleBackToMoodSelector} />;
+      case "neutral":
+        return <MoodNeutral onBack={handleBackToMoodSelector} />;
+      case "very pleasant":
+        return <MoodVeryPleasant onBack={handleBackToMoodSelector} />;
+      default:
+        return <MoodNeutral onBack={handleBackToMoodSelector} />;
+    }
+  }
 
   return (
     <div className="h-screen bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/background.svg')] flex flex-col font-inter-tight relative overflow-hidden">
@@ -80,6 +87,7 @@ const MoodTracker = () => {
             src={logo}
             alt="Ventthrapy Logo"
             className="cursor-pointer w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20"
+            onClick={() => navigate("/")}
           />
         </div>
 
@@ -98,24 +106,22 @@ const MoodTracker = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center justify-center px-8 md:px-12 pb-4 relative z-10 gap-6">
+      <div className="flex-1 flex flex-col items-center justify-center px-8 md:px-12 pb-4 relative z-10">
         {/* Vertical Lines Visual */}
-        <div className="flex items-end justify-center gap-0.5 md:gap-1 mb-4 h-16 md:h-24">
-          {generateLines()}
-        </div>
+        <MoodLines moodColor={moodColor} />
 
         {/* Greeting */}
-        <h2 className="text-primary text-5xl font-medium italic mb-1 font-instrument">
+        <h2 className="text-primary text-5xl font-medium italic mb-1 font-instrument my-6">
           Hello Eesha
         </h2>
 
         {/* Main Question */}
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 max-w-lg font-satoshi leading-tight">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 max-w-lg font-satoshi leading-tight my-6">
           How do you feel about your <br /> current emotions?
         </h1>
 
         {/* Slider Container */}
-        <div className="w-full max-w-sm md:max-w-md">
+        <div className="w-full max-w-sm md:max-w-md mt-6">
           <Slider
             value={moodValue}
             onChange={handleMoodChange}
@@ -152,13 +158,13 @@ const MoodTracker = () => {
         </div>
 
         {/* Slider Labels */}
-        <div className="flex justify-between w-full max-w-sm md:max-w-md text-sm text-gray-600 mb-2 font-satoshi">
+        <div className="flex font-medium justify-between w-full max-w-sm md:max-w-md text-sm font-satoshi leading-none text-primary mb-6 tracking-tight">
           <span>VERY UNPLEASANT</span>
           <span>VERY PLEASANT</span>
         </div>
 
         {/* Instruction */}
-        <p className="text-sm text-gray-500 text-center mb-2 font-satoshi">
+        <p className="text-sm text-gray-500 text-center mb-2 font-satoshi my-6">
           Drag the slider to select your mood of the day.
         </p>
       </div>

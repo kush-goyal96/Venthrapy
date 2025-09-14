@@ -27,7 +27,7 @@ const ServicesSection = () => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className={`h-5 w-5 text-blue-600 ${
+        className={`h-5 w-5 text-primary ${
           direction === "next" ? "rotate-180" : ""
         }`}
       >
@@ -43,7 +43,7 @@ const ServicesSection = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
-    autoplay: false,
+    autoplay: true,
     dotsClass: "slick-dots !m-0 !p-0",
     centerMode: false,
     centerPadding: "0px",
@@ -65,13 +65,13 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 min-h-[100vh] overflow-hidden">
+    <section className="relative bg-[url('/src/assets/images/background.svg')] min-h-[100vh] overflow-hidden">
       <Navbar />
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:py-24 z-10">
         <div className="grid lg:grid-cols-2 items-center min-h-[60vh]">
           {/* Left Side - Our Services Text with ellipse styling */}
           <div className="relative ml-10 mb-10">
-            <div className="relative inline-block text-3xl lg:text-[120px] font-instrument italic font-medium text-primary leading-none">
+            <div className="relative inline-block text-3xl lg:text-[120px] font-secondary italic font-medium text-primary leading-none">
               <h2 className="ml-10">Our</h2>
               <div className="relative mt-2 lg:w-108">
                 <h2 className="relative z-20 leading-10">Services</h2>

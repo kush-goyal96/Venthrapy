@@ -7,11 +7,11 @@ import { meditations } from "../assets/assets";
 
 const Meditation = () => {
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 min-h-[100vh] overflow-hidden">
+    <section className="relative bg-[url('/src/assets/images/background.svg')] min-h-[100vh] overflow-hidden">
       <Navbar isFixed />
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:py-24 z-10">
         <div className="relative w-full text-center h-screen flex items-center justify-center -mt-8 sm:-mt-12">
-          <h2 className="relative z-20 text-5xl lg:text-[72px] font-instrument italic font-medium text-primary leading-tight">
+          <h2 className="relative z-20 text-5xl lg:text-[72px] font-secondary italic font-medium text-primary leading-tight">
             What kind of meditation
             <br className="hidden sm:block" /> are you looking for?
           </h2>

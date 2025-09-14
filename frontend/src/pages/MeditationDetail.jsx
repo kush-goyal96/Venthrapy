@@ -85,7 +85,7 @@ const MeditationDetail = () => {
         <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 items-center">
           <div className="h-64 w-64 md:h-60 md:w-60 rounded-3xl bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/tape_background.svg')] border border-primary/30 shadow-[0_8px_30px_rgba(0,0,0,0.06)] mx-auto" />
           <div>
-            <h1 className="text-2xl md:text-3xl font-inter-tight font-semibold">
+            <h1 className="text-2xl md:text-3xl font-semibold">
               {meditation.title}
             </h1>
             <p className="mt-3 text-[#627089] leading-relaxed max-w-2xl">

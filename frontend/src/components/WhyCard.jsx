@@ -6,7 +6,7 @@ const WhyCard = ({ img, description }) => {
       <div className="h-12 w-12">
         <img src={img} alt="icon" className="h-full w-full object-contain" />
       </div>
-      <p className="text-xl leading-snug font-inter-tight">{description}</p>
+      <p className="text-xl leading-snug">{description}</p>
     </div>
   );
 };

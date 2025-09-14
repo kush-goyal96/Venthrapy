@@ -78,7 +78,7 @@ const MoodTracker = () => {
   }
 
   return (
-    <div className="h-screen bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/background.svg')] flex flex-col font-inter-tight relative overflow-hidden">
+    <div className="h-screen bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/background.svg')] flex flex-col relative overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between px-8 py-4 md:px-12 md:py-6 relative z-10">
         {/* Logo */}
@@ -93,7 +93,7 @@ const MoodTracker = () => {
 
         {/* Header Text */}
         <div className="text-center flex-1 px-4">
-          <p className="text-gray-600 text-sm max-w-lg mx-auto font-satoshi leading-relaxed">
+          <p className="text-gray-600 text-sm max-w-lg mx-auto font-accent leading-relaxed">
             This isn't about labelling yourself. It's about checking in with
             honesty and care.
           </p>
@@ -111,12 +111,12 @@ const MoodTracker = () => {
         <MoodLines moodColor={moodColor} />
 
         {/* Greeting */}
-        <h2 className="text-primary text-5xl font-medium italic mb-1 font-instrument my-6">
+        <h2 className="text-primary text-5xl font-medium italic mb-1 font-secondary my-6">
           Hello Eesha
         </h2>
 
         {/* Main Question */}
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 max-w-lg font-satoshi leading-tight my-6">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 max-w-lg font-accent leading-tight my-6">
           How do you feel about your <br /> current emotions?
         </h1>
 
@@ -158,26 +158,26 @@ const MoodTracker = () => {
         </div>
 
         {/* Slider Labels */}
-        <div className="flex font-medium justify-between w-full max-w-sm md:max-w-md text-sm font-satoshi leading-none text-primary mb-6 tracking-tight">
+        <div className="flex font-medium justify-between w-full max-w-sm md:max-w-md text-sm font-accent leading-none text-primary mb-6 tracking-tight">
           <span>VERY UNPLEASANT</span>
           <span>VERY PLEASANT</span>
         </div>
 
         {/* Instruction */}
-        <p className="text-sm text-gray-500 text-center mb-2 font-satoshi my-6">
+        <p className="text-sm text-gray-500 text-center mb-2 font-accent my-6">
           Drag the slider to select your mood of the day.
         </p>
       </div>
 
       {/* Navigation Buttons */}
       <div className="flex justify-between items-center px-8 py-4 md:px-12 md:py-6 relative z-10">
-        <button className="px-4 md:px-6 py-2 cursor-pointer border-2 border-primary text-primary rounded-full font-medium hover:bg-primary/10 transition-colors font-satoshi text-sm md:text-base">
+        <button className="px-4 md:px-6 py-2 cursor-pointer border-2 border-primary text-primary rounded-full font-medium hover:bg-primary/10 transition-colors font-accent text-sm md:text-base">
           Previous
         </button>
 
         <button
           onClick={saveMood}
-          className="px-4 md:px-6 py-2 cursor-pointer bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-colors font-satoshi text-sm md:text-base"
+          className="px-4 md:px-6 py-2 cursor-pointer bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-colors font-accent text-sm md:text-base"
         >
           Next
         </button>

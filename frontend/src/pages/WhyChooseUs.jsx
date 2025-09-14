@@ -180,7 +180,7 @@ const WhyChooseUs = () => {
               className="w-[680px] max-w-full opacity-80"
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <h2 className="font-instrument italic text-primary text-6xl sm:text-7xl">
+              <h2 className="font-secondary italic text-primary text-6xl sm:text-7xl">
                 Why Choose us?
               </h2>
             </div>

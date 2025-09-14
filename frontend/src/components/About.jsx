@@ -8,14 +8,14 @@ const About = () => {
         <img src={aboutImage} alt="About Venthrapy" className="mb-6 w-148" />
       </div>
       <div className="text-center">
-        <h2 className="text-5xl max-w-3xl font-bold font-instrument italic text-primary mx-auto">
+        <h2 className="text-5xl max-w-3xl font-bold font-secondary italic text-primary mx-auto">
           About us
         </h2>
-        <p className="text-2xl max-w-5xl font-inter-tight text-primary mx-auto mt-4">
+        <p className="text-2xl max-w-5xl text-primary mx-auto mt-4">
           Venthrapy is a movement toward making mental health care approachable,
           everyday, and human.
         </p>
-        <p className="text-2xl max-w-4xl font-inter-tight text-primary mx-auto">
+        <p className="text-2xl max-w-4xl text-primary mx-auto">
           True well-being isn't in a one-hour session, it's in the small, daily
           actions we take, the stories we hear, and the spaces we belong to.
         </p>

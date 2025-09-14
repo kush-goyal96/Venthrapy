@@ -1,8 +1,7 @@
 import React from "react";
 import FAQs from "../components/FAQs";
 import Navbar from "../components/Navbar";
-import {sections} from '../assets/assets'
-
+import { sections } from "../assets/assets";
 
 const FAQ = () => {
   const [currentTitle, setCurrentTitle] = React.useState(sections[0].title);
@@ -14,8 +13,8 @@ const FAQ = () => {
         {/* Left section */}
         <div className="text-primary w-1/2">
           <div className="sticky top-[40%]">
-            <h1 className="font-instrument italic font-bold text-7xl">FAQs</h1>
-            <h3 className="font-inter-tight text-3xl py-4">{currentTitle}</h3>
+            <h1 className="font-secondary italic font-bold text-7xl">FAQs</h1>
+            <h3 className="text-3xl py-4">{currentTitle}</h3>
           </div>
         </div>
 
@@ -28,12 +27,12 @@ const FAQ = () => {
             sections={sections}
             onSectionChange={setCurrentTitle}
             scrollRoot={scrollRoot}
-            anchorRatio={0.70}
+            anchorRatio={0.7}
           />
         </div>
       </div>
     </div>
   );
-};  
+};
 
 export default FAQ;

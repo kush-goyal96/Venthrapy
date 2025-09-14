@@ -20,7 +20,7 @@ const Team = () => {
 
       <div className="items-center justify-center w-full my-10">
         <div>
-          <h1 className="font-instrument text-primary font-semibold text-center text-5xl italic">
+          <h1 className="font-secondary text-primary font-semibold text-center text-5xl italic">
             Meet the Team
           </h1>
         </div>

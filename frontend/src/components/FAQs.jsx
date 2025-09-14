@@ -80,7 +80,7 @@ export function FAQs({
                 >
                   <AccordionHeader
                     onClick={() => handleOpen(key)}
-                    className="border-b-0 px-6 py-5 text-lg font-inter-tight font-medium text-gray-900"
+                    className="border-b-0 px-6 py-5 text-lg font-medium text-gray-900"
                   >
                     <div className="flex w-full items-center justify-between">
                       <span>{item.q}</span>
@@ -91,7 +91,7 @@ export function FAQs({
                       />
                     </div>
                   </AccordionHeader>
-                  <AccordionBody className="whitespace-pre-line pt-0 px-6 pb-6 text-gray-700 leading-relaxed font-inter-tight">
+                  <AccordionBody className="whitespace-pre-line pt-0 px-6 pb-6 text-gray-700 leading-relaxed">
                     {item.a}
                   </AccordionBody>
                 </Accordion>

@@ -40,7 +40,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative text-primary font-inter-tight w-full bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/background.svg')] flex flex-col overflow-hidden min-h-screen">
+    <div className="relative text-primary font-primary w-full bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/background.svg')] flex flex-col overflow-hidden min-h-screen">
       <Navbar isFixed />
 
       {/* Main Content */}
@@ -48,7 +48,7 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-6">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <h1 className="font-instrument italic text-4xl md:text-5xl lg:text-6xl leading-none tracking-tight text-primary">
+            <h1 className="font-secondary text-primary font-semibold text-center text-5xl italic">
               Contact Us
             </h1>
             <p className="text-lg md:text-xl text-black mt-8 max-w-2xl mx-auto leading-relaxed">
@@ -62,7 +62,7 @@ const Contact = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div>
-                <h3 className="font-instrument italic text-3xl md:text-4xl text-primary mb-6">
+                <h3 className="font-secondary italic text-3xl md:text-4xl text-primary mb-6">
                   Let's Connect
                 </h3>
                 <p className="text-lg text-black leading-relaxed mb-8">
@@ -145,7 +145,7 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="bg-background/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 shadow-lg border border-primary/10">
-              <h3 className="font-instrument italic text-3xl md:text-4xl text-primary mb-6">
+              <h3 className="font-secondary italic text-3xl md:text-4xl text-primary mb-6">
                 Send us a Message
               </h3>
 
@@ -248,7 +248,7 @@ const Contact = () => {
           {/* Additional Information */}
           <div className="mt-20 text-center">
             <div className="bg-transparent backdrop-blur-sm rounded-3xl p-8 md:p-12">
-              <h3 className="font-instrument italic text-3xl md:text-4xl text-primary mb-6">
+              <h3 className="font-secondary italic text-3xl md:text-4xl text-primary mb-6">
                 Emergency Support
               </h3>
               <p className="text-lg text-black mb-6 max-w-3xl mx-auto">

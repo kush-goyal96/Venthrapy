@@ -17,11 +17,11 @@ const posts = Array.from({ length: 6 }).map((_, i) => ({
 
 const Blogs = () => {
   return (
-    <div>
+    <div className="bg-[url('/src/assets/images/background.svg')]">
       <Navbar />
       <div className="items-center justify-center w-full my-10">
         <div>
-          <h1 className="font-instrument text-primary font-semibold text-center text-5xl italic">
+          <h1 className="font-secondary text-primary font-semibold text-center text-5xl italic pb-5">
             Blogs
           </h1>
         </div>

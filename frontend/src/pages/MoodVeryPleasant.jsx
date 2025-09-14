@@ -46,7 +46,7 @@ const MoodVeryPleasant = ({ onBack }) => {
   };
 
   return (
-    <div className="h-screen bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/background.svg')] flex flex-col font-inter-tight relative overflow-hidden">
+    <div className="h-screen bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/background.svg')] flex flex-col relative overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between px-8 py-4 md:px-12 md:py-6 relative z-10">
         {/* Logo */}
@@ -61,7 +61,7 @@ const MoodVeryPleasant = ({ onBack }) => {
 
         {/* Header Text */}
         <div className="text-center flex-1 px-4">
-          <p className="text-gray-600 text-sm max-w-lg mx-auto font-satoshi leading-relaxed">
+          <p className="text-gray-600 text-sm max-w-lg mx-auto font-accent leading-relaxed">
             This isn't about labelling yourself. It's about checking in with
             honesty and care.
           </p>
@@ -82,12 +82,12 @@ const MoodVeryPleasant = ({ onBack }) => {
         <MoodLines moodColor="#22c55e" />
 
         {/* Mood Label */}
-        <h2 className="text-primary text-5xl font-medium italic mb-1 font-instrument">
+        <h2 className="text-primary text-5xl font-medium italic mb-1 font-secondary">
           Very Pleasant
         </h2>
 
         {/* Main Question */}
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 max-w-lg font-satoshi leading-tight">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 max-w-lg font-accent leading-tight">
           What best describes this feeling?
         </h1>
 
@@ -97,7 +97,7 @@ const MoodVeryPleasant = ({ onBack }) => {
             <button
               key={emotion}
               onClick={() => toggleEmotion(emotion)}
-              className={`px-3 py-2 rounded-full text-sm font-satoshi transition-colors ${
+              className={`px-3 py-2 rounded-full text-sm font-accent transition-colors ${
                 selectedEmotions.includes(emotion)
                   ? "bg-primary text-white"
                   : "bg-primary/20 text-primary hover:bg-primary/30"
@@ -113,14 +113,14 @@ const MoodVeryPleasant = ({ onBack }) => {
       <div className="flex justify-between items-center px-8 py-4 md:px-12 md:py-6 relative z-10">
         <button
           onClick={() => (onBack ? onBack() : navigate("/mood-tracker"))}
-          className="px-4 md:px-6 py-2 cursor-pointer border-2 border-primary text-primary rounded-full font-medium hover:bg-primary/10 transition-colors font-satoshi text-sm md:text-base"
+          className="px-4 md:px-6 py-2 cursor-pointer border-2 border-primary text-primary rounded-full font-medium hover:bg-primary/10 transition-colors font-accent text-sm md:text-base"
         >
           Previous
         </button>
 
         <button
           onClick={handleNext}
-          className="px-4 md:px-6 py-2 cursor-pointer bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-colors font-satoshi text-sm md:text-base"
+          className="px-4 md:px-6 py-2 cursor-pointer bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-colors font-accent text-sm md:text-base"
         >
           Next
         </button>

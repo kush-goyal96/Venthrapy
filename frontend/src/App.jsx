@@ -9,6 +9,8 @@ import Meditation from "./pages/Meditation.jsx";
 import MeditationDetail from "./pages/MeditationDetail.jsx";
 import MoodTracker from "./pages/MoodTracker.jsx";
 import Contact from "./pages/Contact.jsx";
+import ChooseTherapist from "./pages/ChooseTherapist.jsx";
+import TherapistDetail from "./pages/TherapistDetail.jsx";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
       <Route path="/meditation/:slug" element={<MeditationDetail />} />
       <Route path="/mood-tracker" element={<MoodTracker />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/choose-therapist" element={<ChooseTherapist />} />
+      <Route path="/therapist/:id" element={<TherapistDetail />} />
     </Routes>
   );
 }

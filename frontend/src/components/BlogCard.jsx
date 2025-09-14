@@ -17,13 +17,13 @@ const BlogCard = ({ title, excerpt, author, date, readTime, image, link }) => {
         </div>
       </div>
       <div className="px-4 pt-2 pb-4 space-y-2">
-        <h3 className="text-base font-semibold leading-snug text-primary font-inter-tight group-hover:underline">
+        <h3 className="text-base font-semibold leading-snug text-primary group-hover:underline">
           {title}
         </h3>
-        <p className="text-xs text-gray-600 leading-snug line-clamp-2 font-inter-tight font-medium">
+        <p className="text-xs text-gray-600 leading-snug line-clamp-2 font-medium">
           {excerpt}
         </p>
-        <div className="text-sm text-gray-500 font-inter-tight ">
+        <div className="text-sm text-gray-500">
           <div>{author}</div>
           <div className="flex items-center gap-2">
             <span>{date}</span>

@@ -215,12 +215,12 @@ const WhyChooseUs = () => {
                 style={{ height: `${scrollProgress * 100}%` }}
               />
             </div>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-secondary">
               {allCardsVisible
                 ? "All cards visible - scroll unlocked!"
                 : "Scroll to animate cards"}
             </p>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-secondary">
               Progress: {Math.round(scrollProgress * 100)}% | Active:{" "}
               {isActive ? "Yes" : "No"}
             </p>

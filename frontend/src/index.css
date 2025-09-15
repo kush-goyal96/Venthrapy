@@ -6,6 +6,7 @@
 @theme {
   --color-primary: #527fc3;
   --color-background: #f7f6f4;
+  --color-secondary: #5d5d5d;
   --font-primary: "Inter Tight", sans-serif;
   --font-secondary: "Instrument Serif", serif;
   --font-accent: "Satoshi", sans-serif;
@@ -13,4 +14,19 @@
 
 body {
   font-family: var(--font-primary);
+}
+
+/* Background System */
+.bg-main-page {
+  background-image: url("/src/assets/images/background.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bg-tape-card {
+  background-image: url("/src/assets/images/tape_background.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

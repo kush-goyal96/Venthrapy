@@ -6,12 +6,12 @@ import {
 } from "@material-tailwind/react";
 import { ChevronDown } from "lucide-react";
 
-export function FAQs({
+const FAQs = ({
   sections,
   onSectionChange,
   scrollRoot,
   anchorRatio = 0.25,
-}) {
+}) => {
   const [open, setOpen] = React.useState("0-0");
   const handleOpen = (key) => setOpen((prev) => (prev === key ? "" : key));
 
@@ -76,11 +76,11 @@ export function FAQs({
                 <Accordion
                   key={key}
                   open={open === key}
-                  className="mb-5 rounded-2xl border border-primary shadow-sm px-0 bg-[#EFF0F2]"
+                  className="mb-5 rounded-2xl border border-primary shadow-sm px-0 bg-background"
                 >
                   <AccordionHeader
                     onClick={() => handleOpen(key)}
-                    className="border-b-0 px-6 py-5 text-lg font-medium text-gray-900"
+                    className="border-b-0 px-6 py-5 text-lg font-medium text-secondary"
                   >
                     <div className="flex w-full items-center justify-between">
                       <span>{item.q}</span>
@@ -91,7 +91,7 @@ export function FAQs({
                       />
                     </div>
                   </AccordionHeader>
-                  <AccordionBody className="whitespace-pre-line pt-0 px-6 pb-6 text-gray-700 leading-relaxed">
+                  <AccordionBody className="whitespace-pre-line pt-0 px-6 pb-6 text-secondary leading-relaxed">
                     {item.a}
                   </AccordionBody>
                 </Accordion>
@@ -102,6 +102,6 @@ export function FAQs({
       )}
     </div>
   );
-}
+};
 
 export default FAQs;

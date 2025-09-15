@@ -7,7 +7,7 @@ const FAQ = () => {
   const [currentTitle, setCurrentTitle] = React.useState(sections[0].title);
   const scrollRoot = React.useRef(null);
   return (
-    <div className="">
+    <div className="min-h-screen bg-main-page">
       <Navbar />
       <div className="flex mt-10 ml-[10%]">
         {/* Left section */}

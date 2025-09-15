@@ -8,7 +8,7 @@ import WhyChooseUs from "./WhyChooseUs";
 
 const Home = () => {
   return (
-    <div className="relative text-primary w-full bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/background.svg')] flex flex-col overflow-hidden">
+    <div className="relative text-primary w-full bg-main-page flex flex-col overflow-hidden">
       <Navbar isFixed />
       <div
         aria-hidden="true"

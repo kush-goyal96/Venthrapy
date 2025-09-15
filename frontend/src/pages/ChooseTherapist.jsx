@@ -53,7 +53,7 @@ const ChooseTherapist = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-[url('/src/assets/images/background.svg')] overflow-hidden">
+    <div className="relative min-h-screen bg-main-page overflow-hidden">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-[65%] -translate-x-1/2 -translate-y-1/2 w-[90vw] h-[90vw] max-w-[1400px] max-h-[1400px] bg-gradient-to-b from-[#2F91F2] from-5% via-[#25EBF5] via-20% to-transparent to-35% rounded-full blur-3xl z-0 opacity-95"
@@ -122,7 +122,7 @@ const ChooseTherapist = () => {
         {/* No results message */}
         {filteredTherapists.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-secondary">
               No therapists found matching your criteria. Try adjusting your
               search or filters.
             </p>

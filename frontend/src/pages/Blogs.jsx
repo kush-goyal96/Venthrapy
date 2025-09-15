@@ -17,7 +17,7 @@ const posts = Array.from({ length: 6 }).map((_, i) => ({
 
 const Blogs = () => {
   return (
-    <div className="bg-[url('/src/assets/images/background.svg')]">
+    <div className="bg-main-page">
       <Navbar />
       <div className="items-center justify-center w-full my-10">
         <div>

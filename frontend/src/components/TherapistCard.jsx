@@ -32,20 +32,20 @@ const TherapistCard = ({ therapist, onClick }) => {
       {/* Content */}
       <div className="px-3 pb-3 flex flex-col flex-grow">
         {/* Name */}
-        <h3 className="text-base font-semibold text-gray-900 mb-1">
+        <h3 className="text-base font-semibold text-secondary mb-1">
           {therapist.name}
         </h3>
 
         {/* Specializations - Display as comma-separated text */}
         <div className="mb-2 flex-grow">
-          <p className="text-xs text-gray-600 leading-tight">
+          <p className="text-xs text-secondary leading-tight">
             {therapist.specializations.join(", ")}
           </p>
         </div>
 
         <div className="flex items-center mb-2">
           <IoLanguage className="w-3 h-3 text-primary mr-1" />
-          <span className="text-xs text-gray-600">
+          <span className="text-xs text-secondary">
             {therapist.languages.join(", ")}
           </span>
         </div>

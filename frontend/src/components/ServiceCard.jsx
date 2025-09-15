@@ -18,17 +18,17 @@ const ServiceCard = ({ title, subtitle, description, to }) => {
       <div className="flex items-start justify-between">
         <div>
           <h3 className="text-4xl font-secondary italic">{title}</h3>
-          {subtitle && <p className="mt-1 text-[#2F6CB0]">{subtitle}</p>}
+          {subtitle && <p className="mt-1 text-primary">{subtitle}</p>}
         </div>
         <span
           aria-hidden
-          className="text-[#2F6CB0] text-xl transform transition-transform duration-300 group-hover:translate-x-1"
+          className="text-primary text-xl transform transition-transform duration-300 group-hover:translate-x-1"
         >
           <FaArrowRight />
         </span>
       </div>
 
-      <p className="mt-6 text-md leading-relaxed text-[#627089] transition-colors duration-300 group-hover:text-[#4D5B77]">
+      <p className="mt-6 text-md leading-relaxed text-secondary transition-colors duration-300 group-hover:text-secondary/80">
         {description}
       </p>
     </button>

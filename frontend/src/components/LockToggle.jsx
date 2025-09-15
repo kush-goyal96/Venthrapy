@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import lock from "../assets/images/lock.svg";
 import unlock from "../assets/images/unlock.svg";
 
-export default function LockToggle() {
+const LockToggle = () => {
   const [locked, setLocked] = useState(true);
 
   return (
@@ -33,4 +33,6 @@ export default function LockToggle() {
       </div>
     </button>
   );
-}
+};
+
+export default LockToggle;

@@ -20,10 +20,10 @@ const BlogCard = ({ title, excerpt, author, date, readTime, image, link }) => {
         <h3 className="text-base font-semibold leading-snug text-primary group-hover:underline">
           {title}
         </h3>
-        <p className="text-xs text-gray-600 leading-snug line-clamp-2 font-medium">
+        <p className="text-xs text-secondary leading-snug line-clamp-2 font-medium">
           {excerpt}
         </p>
-        <div className="text-sm text-gray-500">
+        <div className="text-sm text-secondary">
           <div>{author}</div>
           <div className="flex items-center gap-2">
             <span>{date}</span>

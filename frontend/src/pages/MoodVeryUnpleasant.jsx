@@ -46,7 +46,7 @@ const MoodVeryUnpleasant = ({ onBack }) => {
   };
 
   return (
-    <div className="h-screen bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/background.svg')] flex flex-col relative overflow-hidden">
+    <div className="h-screen bg-main-page flex flex-col relative overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between px-8 py-4 md:px-12 md:py-6 relative z-10">
         {/* Logo */}
@@ -61,7 +61,7 @@ const MoodVeryUnpleasant = ({ onBack }) => {
 
         {/* Header Text */}
         <div className="text-center flex-1 px-4">
-          <p className="text-gray-600 text-sm max-w-lg mx-auto font-accent leading-relaxed">
+          <p className="text-secondary text-sm max-w-lg mx-auto font-accent leading-relaxed">
             This isn't about labelling yourself. It's about checking in with
             honesty and care.
           </p>
@@ -87,7 +87,7 @@ const MoodVeryUnpleasant = ({ onBack }) => {
         </h2>
 
         {/* Main Question */}
-        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 max-w-lg font-accent leading-tight">
+        <h1 className="text-2xl md:text-3xl font-bold text-secondary mb-4 max-w-lg font-accent leading-tight">
           What best describes this feeling?
         </h1>
 

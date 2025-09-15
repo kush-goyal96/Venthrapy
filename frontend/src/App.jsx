@@ -12,7 +12,7 @@ import Contact from "./pages/Contact.jsx";
 import ChooseTherapist from "./pages/ChooseTherapist.jsx";
 import TherapistDetail from "./pages/TherapistDetail.jsx";
 
-function App() {
+const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />

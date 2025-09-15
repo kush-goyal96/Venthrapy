@@ -83,12 +83,12 @@ const MeditationDetail = () => {
       <Navbar isFixed />
       <div className="mx-auto max-w-6xl px-6 pt-28 pb-20 h-screen flex items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 items-center">
-          <div className="h-64 w-64 md:h-60 md:w-60 rounded-3xl bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/tape_background.svg')] border border-primary/30 shadow-[0_8px_30px_rgba(0,0,0,0.06)] mx-auto" />
+          <div className="h-64 w-64 md:h-60 md:w-60 rounded-3xl bg-tape-card border border-primary/30 shadow-[0_8px_30px_rgba(0,0,0,0.06)] mx-auto" />
           <div>
             <h1 className="text-2xl md:text-3xl font-semibold">
               {meditation.title}
             </h1>
-            <p className="mt-3 text-[#627089] leading-relaxed max-w-2xl">
+            <p className="mt-3 text-secondary leading-relaxed max-w-2xl">
               {meditation.description}
             </p>
 
@@ -97,7 +97,7 @@ const MeditationDetail = () => {
                 type="button"
                 onClick={toggle}
                 aria-label={isPlaying ? "Pause" : "Play"}
-                className="grid place-items-center h-11 w-11 rounded-full bg-[#2F6CB0] text-white text-xl"
+                className="grid place-items-center h-11 w-11 rounded-full bg-primary text-white text-xl"
               >
                 {isPlaying ? <FaPause /> : <FaCirclePlay />}
               </button>
@@ -110,7 +110,7 @@ const MeditationDetail = () => {
                   onChange={onSeek}
                   className="w-full h-2 rounded-full appearance-none bg-gray-300 outline-none"
                 />
-                <div className="flex justify-between text-xs text-[#2F6CB0] mt-1">
+                <div className="flex justify-between text-xs text-primary mt-1">
                   <span>{formatTime(currentTime)}</span>
                   <span>{meditation.duration}</span>
                 </div>

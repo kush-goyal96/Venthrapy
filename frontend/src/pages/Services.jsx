@@ -65,7 +65,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <section className="relative bg-[url('/src/assets/images/background.svg')] min-h-[100vh] overflow-hidden">
+    <section className="relative bg-main-page min-h-[100vh] overflow-hidden">
       <Navbar />
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:py-24 z-10">
         <div className="grid lg:grid-cols-2 items-center min-h-[60vh]">

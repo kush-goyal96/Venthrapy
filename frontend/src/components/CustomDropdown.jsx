@@ -42,7 +42,7 @@ const CustomDropdown = ({
       >
         <span className="text-primary">{displayText}</span>
         <svg
-          className={`h-4 w-4 text-gray-500 transition-transform duration-200 ${
+          className={`h-4 w-4 text-secondary transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
           fill="none"
@@ -70,7 +70,7 @@ const CustomDropdown = ({
                 className={`block w-full px-4 py-2 text-left text-sm text-primary transition-colors duration-150 ${
                   value === option.value
                     ? "bg-primary/10 text-primary font-medium"
-                    : "text-gray-700 hover:bg-gray-100 focus:bg-gray-100 focus:text-gray-900 focus:outline-none"
+                    : "text-secondary hover:bg-gray-100 focus:bg-gray-100 focus:text-secondary focus:outline-none"
                 }`}
               >
                 {option.label}

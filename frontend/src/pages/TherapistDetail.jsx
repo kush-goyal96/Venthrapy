@@ -17,7 +17,7 @@ const TherapistDetail = () => {
 
   if (!therapist) {
     return (
-      <div className="min-h-screen bg-[url('/src/assets/images/background.svg')] flex items-center justify-center">
+      <div className="min-h-screen bg-main-page flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-semibold text-primary mb-4">
             Therapist not found
@@ -47,7 +47,7 @@ const TherapistDetail = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-[url('/src/assets/images/background.svg')] overflow-hidden">
+    <div className="relative min-h-screen bg-main-page overflow-hidden">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute left-1/2 top-[65%] -translate-x-1/2 -translate-y-1/2 w-[90vw] h-[90vw] max-w-[1400px] max-h-[1400px] bg-gradient-to-b from-[#2F91F2] from-5% via-[#25EBF5] via-20% to-transparent to-35% rounded-full blur-3xl z-0 opacity-95"
@@ -94,31 +94,31 @@ const TherapistDetail = () => {
                 <h1 className="text-4xl font-secondary font-semibold text-primary mb-2">
                   {therapist.name}
                 </h1>
-                <p className="text-xl text-gray-600 mb-4">{therapist.title}</p>
-                <p className="text-lg text-gray-700 mb-6">{therapist.bio}</p>
+                <p className="text-xl text-secondary mb-4">{therapist.title}</p>
+                <p className="text-lg text-secondary mb-6">{therapist.bio}</p>
 
                 {/* Quick Stats */}
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                   <div className="bg-white/80 rounded-xl p-4 text-center">
-                    <p className="text-sm text-gray-600">Experience</p>
+                    <p className="text-sm text-secondary">Experience</p>
                     <p className="text-lg font-semibold text-primary">
                       {therapist.experience}
                     </p>
                   </div>
                   <div className="bg-white/80 rounded-xl p-4 text-center">
-                    <p className="text-sm text-gray-600">Session Cost</p>
+                    <p className="text-sm text-secondary">Session Cost</p>
                     <p className="text-lg font-semibold text-primary">
                       {therapist.sessionCost}
                     </p>
                   </div>
                   <div className="bg-white/80 rounded-xl p-4 text-center">
-                    <p className="text-sm text-gray-600">Duration</p>
+                    <p className="text-sm text-secondary">Duration</p>
                     <p className="text-lg font-semibold text-primary">
                       {therapist.sessionDuration}
                     </p>
                   </div>
                   <div className="bg-white/80 rounded-xl p-4 text-center">
-                    <p className="text-sm text-gray-600">Type</p>
+                    <p className="text-sm text-secondary">Type</p>
                     <p className="text-lg font-semibold text-primary">
                       {therapist.therapyType}
                     </p>
@@ -128,7 +128,7 @@ const TherapistDetail = () => {
                 {/* Languages */}
                 <div className="flex items-center mb-6">
                   <IoLanguage className="w-5 h-5 mr-2 text-primary" />
-                  <span className="text-gray-600 mr-2">Languages:</span>
+                  <span className="text-secondary mr-2">Languages:</span>
                   <span className="text-primary font-medium">
                     {therapist.languages.join(", ")}
                   </span>
@@ -137,7 +137,7 @@ const TherapistDetail = () => {
                 {/* Book Session Button */}
                 <button
                   onClick={handleBookSession}
-                  className="bg-primary text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors shadow-lg"
+                  className="bg-primary cursor-pointer text-white px-8 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors shadow-lg"
                 >
                   Book a Session
                 </button>
@@ -176,7 +176,7 @@ const TherapistDetail = () => {
                     {therapist.areasOfExpertise.map((area, index) => (
                       <li key={index} className="flex items-center">
                         <IoCheckmarkCircle className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
-                        <span className="text-gray-700">{area}</span>
+                        <span className="text-secondary">{area}</span>
                       </li>
                     ))}
                   </ul>
@@ -187,7 +187,7 @@ const TherapistDetail = () => {
                   <h3 className="text-2xl font-semibold text-primary mb-4">
                     Therapeutic Approach
                   </h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-secondary leading-relaxed">
                     {therapist.approach}
                   </p>
                 </div>
@@ -200,14 +200,14 @@ const TherapistDetail = () => {
                   <h3 className="text-2xl font-semibold text-primary mb-4">
                     Education & Certifications
                   </h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">
+                  <p className="text-secondary leading-relaxed mb-4">
                     {therapist.education}
                   </p>
                   <div className="space-y-2">
                     {therapist.certifications.map((cert, index) => (
                       <div key={index} className="flex items-center">
                         <IoCheckmarkCircle className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
-                        <span className="text-gray-700">{cert}</span>
+                        <span className="text-secondary">{cert}</span>
                       </div>
                     ))}
                   </div>
@@ -218,7 +218,7 @@ const TherapistDetail = () => {
                   <h3 className="text-2xl font-semibold text-primary mb-4">
                     Availability
                   </h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-secondary leading-relaxed">
                     {therapist.availability}
                   </p>
                 </div>
@@ -271,7 +271,7 @@ const TherapistDetail = () => {
             </h3>
             <form onSubmit={handleBookingSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary mb-2">
                   Select Date
                 </label>
                 <input
@@ -283,7 +283,7 @@ const TherapistDetail = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-secondary mb-2">
                   Select Time
                 </label>
                 <select
@@ -307,7 +307,7 @@ const TherapistDetail = () => {
                 <button
                   type="button"
                   onClick={() => setShowBookingModal(false)}
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-secondary hover:bg-gray-50 transition-colors"
                 >
                   Cancel
                 </button>

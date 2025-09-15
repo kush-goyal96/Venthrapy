@@ -10,7 +10,7 @@ const MeditationCard = ({ title, duration, slug }) => {
   };
 
   return (
-    <div className="group relative h-72 w-72 sm:h-80 sm:w-80 rounded-4xl bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/tape_background.svg')] border border-primary/30 shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)] hover:border-primary/50 focus-within:-translate-y-1">
+    <div className="group relative h-72 w-72 sm:h-80 sm:w-80 rounded-4xl bg-tape-card border border-primary/30 shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.12)] hover:border-primary/50 focus-within:-translate-y-1">
       <div className="pointer-events-none absolute inset-0 rounded-4xl bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       <div className="text-background px-5 pt-5 pr-7 font-accent font-bold text-lg sm:text-xl leading-snug">
         {title}

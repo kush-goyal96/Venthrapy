@@ -40,7 +40,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="relative text-primary font-primary w-full bg-cover bg-center bg-no-repeat bg-[url('/src/assets/images/background.svg')] flex flex-col overflow-hidden min-h-screen">
+    <div className="relative text-primary font-primary w-full bg-main-page flex flex-col overflow-hidden min-h-screen">
       <Navbar isFixed />
 
       {/* Main Content */}
@@ -51,7 +51,7 @@ const Contact = () => {
             <h1 className="font-secondary text-primary font-semibold text-center text-5xl italic">
               Contact Us
             </h1>
-            <p className="text-lg md:text-xl text-black mt-8 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-secondary mt-8 max-w-2xl mx-auto leading-relaxed">
               Ready to start your mental health journey? We're here to listen,
               support, and guide you every step of the way.
             </p>
@@ -65,7 +65,7 @@ const Contact = () => {
                 <h3 className="font-secondary italic text-3xl md:text-4xl text-primary mb-6">
                   Let's Connect
                 </h3>
-                <p className="text-lg text-black leading-relaxed mb-8">
+                <p className="text-lg text-secondary leading-relaxed mb-8">
                   Whether you're looking for therapy services, have questions
                   about our approach, or want to learn more about mental health
                   resources, we're here to help.
@@ -82,8 +82,8 @@ const Contact = () => {
                     <h4 className="font-semibold text-lg text-primary mb-1">
                       Email
                     </h4>
-                    <p className="text-black">hello@venthrapy.in</p>
-                    <p className="text-black">support@venthrapy.in</p>
+                    <p className="text-secondary">hello@venthrapy.in</p>
+                    <p className="text-secondary">support@venthrapy.in</p>
                   </div>
                 </div>
 
@@ -95,8 +95,10 @@ const Contact = () => {
                     <h4 className="font-semibold text-lg text-primary mb-1">
                       Phone
                     </h4>
-                    <p className="text-black">+91 98765 43210</p>
-                    <p className="text-sm text-black">Mon-Fri 9AM-6PM IST</p>
+                    <p className="text-secondary">+91 98765 43210</p>
+                    <p className="text-sm text-secondary">
+                      Mon-Fri 9AM-6PM IST
+                    </p>
                   </div>
                 </div>
 
@@ -108,9 +110,9 @@ const Contact = () => {
                     <h4 className="font-semibold text-lg text-primary mb-1">
                       Office
                     </h4>
-                    <p className="text-black">123 Wellness Avenue</p>
-                    <p className="text-black">Bandra West</p>
-                    <p className="text-black">Mumbai, Maharashtra 400050</p>
+                    <p className="text-secondary">123 Wellness Avenue</p>
+                    <p className="text-secondary">Bandra West</p>
+                    <p className="text-secondary">Mumbai, Maharashtra 400050</p>
                   </div>
                 </div>
               </div>
@@ -154,7 +156,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-black mb-2"
+                      className="block text-sm font-medium text-secondary mb-2"
                     >
                       Full Name *
                     </label>
@@ -165,7 +167,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors bg-white/50 backdrop-blur-sm text-black placeholder-gray-700"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors bg-white/50 backdrop-blur-sm text-secondary placeholder-gray-700"
                       placeholder="Your full name"
                     />
                   </div>
@@ -173,7 +175,7 @@ const Contact = () => {
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-black mb-2"
+                      className="block text-sm font-medium text-secondary mb-2"
                     >
                       Email Address *
                     </label>
@@ -184,7 +186,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors bg-white/50 backdrop-blur-sm text-black placeholder-gray-700"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors bg-white/50 backdrop-blur-sm text-secondary placeholder-gray-700"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -193,7 +195,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-black mb-2"
+                    className="block text-sm font-medium text-secondary mb-2"
                   >
                     Subject *
                   </label>
@@ -204,7 +206,7 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors bg-white/50 backdrop-blur-sm text-black placeholder-gray-700"
+                    className="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors bg-white/50 backdrop-blur-sm text-secondary placeholder-gray-700"
                     placeholder="What's this about?"
                   />
                 </div>
@@ -212,7 +214,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-black mb-2"
+                    className="block text-sm font-medium text-secondary mb-2"
                   >
                     Message *
                   </label>
@@ -223,7 +225,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors bg-white/50 backdrop-blur-sm text-black placeholder-gray-700 resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-primary/20 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors bg-white/50 backdrop-blur-sm text-secondary placeholder-gray-700 resize-none"
                     placeholder="Tell us how we can help you..."
                   />
                 </div>
@@ -237,7 +239,7 @@ const Contact = () => {
               </form>
 
               <div className="mt-6 p-4 bg-primary/5 rounded-xl border border-primary/10">
-                <p className="text-sm text-black text-center">
+                <p className="text-sm text-secondary text-center">
                   <strong>Response Time:</strong> We typically respond within 24
                   hours during business days.
                 </p>
@@ -251,7 +253,7 @@ const Contact = () => {
               <h3 className="font-secondary italic text-3xl md:text-4xl text-primary mb-6">
                 Emergency Support
               </h3>
-              <p className="text-lg text-black mb-6 max-w-3xl mx-auto">
+              <p className="text-lg text-secondary mb-6 max-w-3xl mx-auto">
                 If you're experiencing a mental health crisis or having thoughts
                 of self-harm, please reach out to emergency services
                 immediately.

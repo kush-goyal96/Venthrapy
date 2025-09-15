@@ -7,7 +7,7 @@ import { meditations } from "../assets/assets";
 
 const Meditation = () => {
   return (
-    <section className="relative bg-[url('/src/assets/images/background.svg')] min-h-[100vh] overflow-hidden">
+    <section className="relative bg-main-page min-h-[100vh] overflow-hidden">
       <Navbar isFixed />
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:py-24 z-10">
         <div className="relative w-full text-center h-screen flex items-center justify-center -mt-8 sm:-mt-12">

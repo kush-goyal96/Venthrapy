@@ -2,20 +2,23 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BlogCard from "../components/BlogCard";
-import reactLogo from "../assets/react.svg";
-
-const posts = Array.from({ length: 6 }).map((_, i) => ({
-  title: "Why Journaling works (and how to start it)",
-  excerpt: "Someone flipping through a pretty notebook, soft lo-fi music",
-  author: "Gurleen Kaur",
-  date: "Aug 16, 2025",
-  readTime: "12min read",
-  image: reactLogo,
-  link: "#",
-  id: i,
-}));
+import { useQuery } from "@tanstack/react-query";
+import { fetchBlogs } from "../lib/api";
+import toast from "react-hot-toast";
 
 const Blogs = () => {
+  const {
+    data: posts = [],
+    isLoading,
+    isError,
+  } = useQuery({
+    queryKey: ["blogs"],
+    queryFn: fetchBlogs,
+    staleTime: 60000,
+    retry: 1,
+  });
+  if (isError) toast.error("Failed to load blogs");
+
   return (
     <div className="bg-main-page">
       <Navbar />
@@ -26,9 +29,22 @@ const Blogs = () => {
           </h1>
         </div>
         <div className="max-w-6xl mx-auto mt-5 px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
-          {posts.map((p) => (
-            <BlogCard key={p.id} {...p} />
-          ))}
+          {isLoading && (
+            <div className="col-span-full text-secondary">Loading blogs...</div>
+          )}
+          {!isLoading &&
+            posts.map((p) => (
+              <BlogCard
+                key={p.id}
+                title={p.title}
+                excerpt={p.excerpt}
+                author={p.author}
+                date={new Date(p.publishedAt).toLocaleDateString()}
+                readTime={p.readTime || ""}
+                image={p.coverImage}
+                link={`/blogs/${p.id}`}
+              />
+            ))}
         </div>
       </div>
       <Footer />

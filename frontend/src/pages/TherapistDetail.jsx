@@ -3,7 +3,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import { IoArrowBack, IoCheckmarkCircle, IoLanguage } from "react-icons/io5";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { therapists } from "../assets/assets";
+import { useQueryClient, useQuery } from "@tanstack/react-query";
+import { fetchTherapistById } from "../lib/api";
+import toast from "react-hot-toast";
 
 const TherapistDetail = () => {
   const { id } = useParams();
@@ -12,8 +14,22 @@ const TherapistDetail = () => {
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
 
-  // Find the therapist by ID
-  const therapist = therapists.find((t) => t.id === parseInt(id));
+  const queryClient = useQueryClient();
+  const initialFromList = () => {
+    const list = queryClient.getQueryData(["therapists"]) || [];
+    return list.find((t) => String(t.id) === String(id));
+  };
+
+  const { data: therapist, isError } = useQuery({
+    queryKey: ["therapist", id],
+    queryFn: () => fetchTherapistById(id),
+    initialData: initialFromList,
+    retry: 1,
+  });
+
+  if (isError) {
+    toast.error("Failed to load therapist");
+  }
 
   if (!therapist) {
     return (

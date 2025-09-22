@@ -1,21 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import TherapistCard from "../components/TherapistCard";
 import CustomDropdown from "../components/CustomDropdown";
-import { therapists, languages, specializations } from "../assets/assets";
+import { languages, specializations } from "../assets/assets";
+import toast from "react-hot-toast";
+import { useQuery } from "@tanstack/react-query";
+import { fetchTherapists } from "../lib/api";
 
 const ChooseTherapist = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLanguage, setSelectedLanguage] = useState("");
   const [selectedSpecialization, setSelectedSpecialization] = useState("");
+  const {
+    data: apiTherapists = [],
+    isLoading: loading,
+    isError,
+  } = useQuery({
+    queryKey: ["therapists"],
+    queryFn: fetchTherapists,
+    staleTime: 1000 * 60,
+    retry: 1,
+  });
+
+  useEffect(() => {
+    if (isError) {
+      toast.error("Failed to load therapists");
+    }
+  }, [isError]);
+
+  const sourceTherapists = apiTherapists;
 
   // Filter therapists based on search and filter criteria
-  const filteredTherapists = therapists.filter((therapist) => {
-    // Search filter
+  const filteredTherapists = sourceTherapists.filter((therapist) => {
     const matchesSearch =
       searchTerm === "" ||
       therapist.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -110,13 +130,24 @@ const ChooseTherapist = () => {
       {/* Therapist Cards Grid */}
       <div className="relative max-w-5xl mx-auto px-4 pb-16 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center auto-cols-fr">
-          {filteredTherapists.map((therapist) => (
-            <TherapistCard
-              key={therapist.id}
-              therapist={therapist}
-              onClick={handleTherapistClick(therapist.id)}
-            />
-          ))}
+          {loading && (
+            <div className="col-span-full text-center text-secondary">
+              Loading therapists...
+            </div>
+          )}
+          {isError && !loading && (
+            <div className="col-span-full text-center text-red-500">
+              Failed to load therapists
+            </div>
+          )}
+          {!loading &&
+            filteredTherapists.map((therapist) => (
+              <TherapistCard
+                key={therapist.id}
+                therapist={therapist}
+                onClick={handleTherapistClick(therapist.id)}
+              />
+            ))}
         </div>
 
         {/* No results message */}

@@ -1,8 +1,10 @@
-import React, { useMemo, useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { meditations } from "../assets/assets";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { fetchMeditationBySlug } from "../lib/api";
+import toast from "react-hot-toast";
 import { FaCirclePlay, FaPause } from "react-icons/fa6";
 
 const formatTime = (secs) => {
@@ -17,10 +19,22 @@ const formatTime = (secs) => {
 const MeditationDetail = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const meditation = useMemo(
-    () => meditations.find((m) => m.slug === slug),
-    [slug]
-  );
+  const queryClient = useQueryClient();
+  const initialFromList = () => {
+    const list = queryClient.getQueryData(["meditations"]) || [];
+    return list.find((m) => m.slug === slug);
+  };
+  const {
+    data: meditation,
+    isError,
+    isLoading,
+  } = useQuery({
+    queryKey: ["meditation", slug],
+    queryFn: () => fetchMeditationBySlug(slug),
+    initialData: initialFromList,
+    retry: 1,
+  });
+  if (isError) toast.error("Failed to load meditation");
 
   const audioRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -39,6 +53,14 @@ const MeditationDetail = () => {
       audio.removeEventListener("timeupdate", onTime);
     };
   }, [meditation]);
+
+  if (isLoading && !meditation) {
+    return (
+      <section className="h-screen grid place-items-center">
+        <div className="text-center">Loading...</div>
+      </section>
+    );
+  }
 
   if (!meditation) {
     return (
@@ -79,13 +101,13 @@ const MeditationDetail = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 min-h-[100vh]">
+    <section className="relative bg-main-page min-h-[100vh]">
       <Navbar isFixed />
       <div className="mx-auto max-w-6xl px-6 pt-28 pb-20 h-screen flex items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-10 items-center">
           <div className="h-64 w-64 md:h-60 md:w-60 rounded-3xl bg-tape-card border border-primary/30 shadow-[0_8px_30px_rgba(0,0,0,0.06)] mx-auto" />
           <div>
-            <h1 className="text-2xl md:text-3xl font-semibold">
+            <h1 className="text-2xl md:text-3xl font-semibold text-heading">
               {meditation.title}
             </h1>
             <p className="mt-3 text-secondary leading-relaxed max-w-2xl">

@@ -32,7 +32,7 @@ const TherapistCard = ({ therapist, onClick }) => {
       {/* Content */}
       <div className="px-3 pb-3 flex flex-col flex-grow">
         {/* Name */}
-        <h3 className="text-base font-semibold text-secondary mb-1">
+        <h3 className="text-base font-semibold text-heading mb-1">
           {therapist.name}
         </h3>
 

@@ -7,6 +7,7 @@ import WhyChooseUs from "./pages/WhyChooseUs.jsx";
 import Services from "./pages/Services.jsx";
 import Meditation from "./pages/Meditation.jsx";
 import MeditationDetail from "./pages/MeditationDetail.jsx";
+import BlogDetail from "./pages/BlogDetail.jsx";
 import MoodTracker from "./pages/MoodTracker.jsx";
 import Contact from "./pages/Contact.jsx";
 import ChooseTherapist from "./pages/ChooseTherapist.jsx";
@@ -18,6 +19,7 @@ const App = () => {
       <Route path="/" element={<Home />} />
       <Route path="/team" element={<Team />} />
       <Route path="/blogs" element={<Blogs />} />
+      <Route path="/blogs/:id" element={<BlogDetail />} />
       <Route path="/faq" element={<FAQ />} />
       <Route path="/why-choose-us" element={<WhyChooseUs />} />
       <Route path="/services" element={<Services />} />
@@ -29,6 +31,6 @@ const App = () => {
       <Route path="/therapist/:id" element={<TherapistDetail />} />
     </Routes>
   );
-}
+};
 
 export default App;

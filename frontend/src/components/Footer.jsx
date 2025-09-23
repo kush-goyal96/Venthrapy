@@ -50,9 +50,6 @@ const Footer = () => {
         <div>
           <p className="text-xl text-primary font-medium mb-5">Pages</p>
           <ul className="flex flex-col gap-2 text-primary">
-            <li className="cursor-pointer w-fit" onClick={() => navigate("/")}>
-              Home
-            </li>
             <li
               className="cursor-pointer w-fit"
               onClick={() => navigate("/about")}
@@ -69,13 +66,19 @@ const Footer = () => {
               className="cursor-pointer w-fit"
               onClick={() => navigate("/blogs")}
             >
-              Resources
+              Blogs
             </li>
             <li
               className="cursor-pointer w-fit"
               onClick={() => navigate("/meditation")}
             >
               Meditation Library
+            </li>
+            <li
+              className="cursor-pointer w-fit"
+              onClick={() => navigate("/faq")}
+            >
+              FAQ
             </li>
             <li
               className="cursor-pointer w-fit"
@@ -111,9 +114,14 @@ const Footer = () => {
             </li>
             <li
               className="cursor-pointer w-fit"
-              onClick={() => window.open("https://x.com/", "_blank")}
+              onClick={() =>
+                window.open(
+                  "https://www.facebook.com/people/Venthrapy/100063855079024/",
+                  "_blank"
+                )
+              }
             >
-              Twitter
+              Facebook
             </li>
           </ul>
         </div>

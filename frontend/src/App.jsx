@@ -12,6 +12,8 @@ import MoodTracker from "./pages/MoodTracker.jsx";
 import Contact from "./pages/Contact.jsx";
 import ChooseTherapist from "./pages/ChooseTherapist.jsx";
 import TherapistDetail from "./pages/TherapistDetail.jsx";
+import Login from "./pages/Login.jsx";
+import Signup from "./pages/Signup.jsx";
 
 const App = () => {
   return (
@@ -29,6 +31,8 @@ const App = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/choose-therapist" element={<ChooseTherapist />} />
       <Route path="/therapist/:id" element={<TherapistDetail />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
     </Routes>
   );
 };

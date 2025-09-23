@@ -115,3 +115,36 @@ export const fetchMeditationBySlug = async (slug) => {
     tags: Array.isArray(m.tags) ? m.tags : [],
   };
 };
+
+// Auth API methods
+export const signup = async (userData) => {
+  const { data } = await axios.post(`${baseUrl}/api/auth/register`, userData, {
+    withCredentials: true,
+  });
+  return data;
+};
+
+export const login = async (credentials) => {
+  const { data } = await axios.post(`${baseUrl}/api/auth/login`, credentials, {
+    withCredentials: true,
+  });
+  return data;
+};
+
+export const logout = async () => {
+  const { data } = await axios.post(
+    `${baseUrl}/api/auth/logout`,
+    {},
+    {
+      withCredentials: true,
+    }
+  );
+  return data;
+};
+
+export const getCurrentUser = async () => {
+  const { data } = await axios.get(`${baseUrl}/api/auth/me`, {
+    withCredentials: true,
+  });
+  return data;
+};

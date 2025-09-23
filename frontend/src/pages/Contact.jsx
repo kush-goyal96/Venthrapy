@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import axios from "axios";
+import toast from "react-hot-toast";
 import {
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,
   FaInstagram,
   FaLinkedin,
-  FaTwitter,
+  FaFacebook,
 } from "react-icons/fa";
 
 const Contact = () => {
@@ -26,17 +28,32 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+
+    try {
+      const baseUrl =
+        import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+      const response = await axios.post(`${baseUrl}/api/contact`, formData);
+
+      if (response.data.success) {
+        toast.success("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.error("Contact form error:", error);
+      toast.error(error.response?.data?.message || "Failed to send message");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -51,7 +68,7 @@ const Contact = () => {
             <h1 className="font-secondary text-primary font-semibold text-center text-5xl italic">
               Contact Us
             </h1>
-              <p className="text-lg md:text-xl text-secondary mt-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-secondary mt-8 max-w-2xl mx-auto leading-relaxed">
               Ready to start your mental health journey? We're here to listen,
               support, and guide you every step of the way.
             </p>
@@ -139,7 +156,7 @@ const Contact = () => {
                     href="#"
                     className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors"
                   >
-                    <FaTwitter className="w-5 h-5 text-primary" />
+                    <FaFacebook className="w-5 h-5 text-primary" />
                   </a>
                 </div>
               </div>
@@ -232,9 +249,10 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-blue-800 text-white px-8 py-4 rounded-xl font-semibold tracking-tight transition-colors duration-200 shadow-lg hover:shadow-xl"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary hover:bg-blue-800 disabled:bg-gray-400 disabled:cursor-not-allowed text-white px-8 py-4 rounded-xl font-semibold tracking-tight transition-colors duration-200 shadow-lg hover:shadow-xl"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
 

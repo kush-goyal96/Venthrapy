@@ -53,7 +53,7 @@ const MoodNeutral = ({ onBack }) => {
         <div className="flex items-center">
           <img
             src={logo}
-            alt="Ventthrapy Logo"
+            alt="Venthrapy Logo"
             className="cursor-pointer w-8 h-8 md:w-10 md:h-10 lg:w-20 lg:h-20"
             onClick={() => navigate("/")}
           />
